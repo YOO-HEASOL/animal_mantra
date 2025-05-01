@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>쥐띠 메시지</title>
+  <style>
+    .svg-wrapper {
+    
+      position: relative;
+      scale: 120%;
+      /**width: 130%;
+      height: 330px;**/
+      margin: 0 auto;
+    
+    }
+
+    .svg-background {
+      width: 100%;
+      height: 100%;
+      /**filter: blur(4px);
+      backdrop-filter: blur(5px);**/
+    }
+
+    .svg-message-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #62472F;
+      text-align: center;
+      font-family: NanumMyeongjo;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 150%;
+      padding: 36px;
+      box-sizing: border-box;
+    }
+
+    .mouse-container {
+      margin-top: auto;
+      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .chat-bubble {
+      position: relative;
+      scale: 110%;
+      
+    }
+
+    .chat-bubble img {
+      width: 180px;
+      margin-bottom: 20%;
+      
+    }
+
+    .chat-text {
+      position: absolute;
+      top: 28%;
+      left: 10%;
+      transform: translateY(-30%);
+      width: 120px;
+      font-size: 13px;
+      color: #836B56;
+      font-family: "BM Yeonsung";
+      text-align: center;
+      line-height: 136%;
+    }
+
+    .mouse {
+      width: 80px;
+      margin-left: -10px;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
+    @font-face {
+      font-family: 'BM Yeonsung';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.0/BMYeonsung.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Nanum Myeongjo', serif;
+      background: url('images/bg_rat.png') no-repeat center center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .title {
+      margin-top: 40px;
+      text-align: center;
+      color: #FFF;
+      font-family: "BM Yeonsung";
+      font-size: 33.409px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 136%;
+    }
+
+    .message-box {
+      position: relative;
+      width: 254px;
+      height: 196px;
+      margin-top: 20px;
+    }
+
+    .message-box img {
+      width: 100%;
+      height: 100%;
+    }
+
+    .message-text {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 254px;
+      height: 196px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: #62472F;
+      text-align: center;
+      font-family: NanumMyeongjo;
+      font-size: 22.814px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 150%;
+    }
+
+    /**.mouse-container {
+      margin-top: auto;
+      margin-bottom: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding-right: 50px;
+    }**/
+
+    .chat-bubble {
+      position: relative;
+      padding-right: 20px;
+       /* 180px total - 38px from mouse right */
+    }
+
+    .chat-bubble img {
+      width: 160px;
+      
+    }
+
+    .chat-text {
+      position: absolute;
+      top: 30%;
+      left: 7%;
+      transform: translateY(-30%);
+      width: 130px;
+      font-size: 11px;
+      color: #836B56;
+      font-family: "BM Yeonsung";
+      text-align: center;
+      line-height: 130%;
+    }
+
+    .mouse {
+      width: 80px;
+    }
+  </style>
+
+  <script>
+    // 주소 복사 방지
+    history.replaceState({}, '', '/'); // 주소창에서 URL 감추기 (일부 브라우저)
+    document.addEventListener('contextmenu', e => e.preventDefault()); // 우클릭 방지
+    document.addEventListener('keydown', e => {
+      if ((e.ctrlKey && e.key === 'c') || (e.metaKey && e.key === 'c')) e.preventDefault(); // 복사 방지
+    });
+  </script>
+</head>
+<body>
+  <div class="title">당신의 하루를 위한<br>작은 메시지</div>
+
+  <div class="message-box">
+    
+    <div class="svg-wrapper">
+      <img src="images/img_bg_txt.svg" alt="메시지 배경" class="svg-background" />
+      <div class="svg-message-text" id="message"></div>
+    </div>
+    
+    <div class="message-text" id="message">
+      <!-- JS로 랜덤 메시지 들어옴 -->
+    </div>
+  </div>
+
+  <div class="mouse-container">
+    <div class="chat-bubble">
+      <img src="images/img_chat.png" alt="말풍선" />
+      <div class="chat-text">
+        매일 나를 만나러 와줄 거죠?<br />
+        다른 메시지로 기다리고 있을게요.
+      </div>
+    </div>
+    <img class="mouse" src="images/img_rat.png" alt="쥐 캐릭터" />
+  </div>
+
+  <script>
+    const messages = [
+      "쌀독 속 쥐는 길이 보이지 않아도 탈출구를 만든다. 오늘도 한 걸음, 지혜롭게.",
+      "가장 작은 구멍이 가장 큰 탈출구가 된다. 세밀하게 보라.",
+      "빠른 발보다 빠른 머리가 위기를 이긴다. 침착하게 움직여라.",
+      "지혜는 언제나 불리한 곳에서 빛난다. 오늘의 시련을 웃어넘겨라.",
+      "기민한 쥐는 배고픔보다 두려움을 먼저 이긴다. 과감히 움직여라.",
+      "작지만 영리한 쥐처럼, 오늘은 작은 이득을 소중히 챙겨라.",
+      "수백 마리 고양이도 한 쥐의 지략을 이기지 못한다. 두려워 말고 길을 만들어라.",
+      "어둠 속에서도 길을 찾는 이가 진짜 강자다.",
+      "속도가 아닌 방향을 먼저 잡아라. 쥐는 방향을 잃지 않는다.",
+      "상황을 읽는 눈은, 힘보다 귀하다. 주변을 잘 살펴라.",
+      "준비된 쥐는 어떤 시련도 두렵지 않다. 오늘, 작은 준비를 시작해라.",
+      "복잡한 길에서도 쥐는 냄새를 쫓아 목적지를 찾는다. 너의 직감을 믿어라.",
+      "빠르게 숨는 쥐보다 오래 살아남는 쥐가 현명하다. 서두르지 마라.",
+      "가끔은 구석에 숨는 것도 전략이다. 잠시 쉬어가도 괜찮다.",
+      "달빛 아래 쥐는 흔적을 남기지 않는다. 조용히, 그러나 뚜렷이 움직여라.",
+      "진짜 위기는 눈에 보이지 않는다. 감각을 세워라.",
+      "쥐는 군더더기 없이 행동한다. 오늘은 '버릴 것'을 찾아봐라.",
+      "큰 싸움은 피하고, 중요한 것을 지켜라. 쥐의 지혜를 기억해라.",
+      "지혜로운 쥐는 두 번째 기회를 노린다. 조급해하지 마라.",
+      "어둠을 두려워하지 마라. 쥐는 어둠 속에서 빛난다.",
+      "오늘 한 번은, 조용히 웃고 지나가라. 쥐는 시끄럽지 않다.",
+      "작은 기회를 소홀히 하지 마라. 쥐는 작은 빵조각도 축복처럼 여긴다.",
+      "무리 속에 섞이는 것도 때로는 최고의 전략이다. 혼자 싸우지 마라.",
+      "눈앞의 먹이보다 생존을 먼저 생각하라. 현명한 선택을 해라.",
+      "매번 승리할 필요는 없다. 살아남는 자가 이긴다.",
+      "한 걸음 늦어도 괜찮다. 중요한 건 방향이다.",
+      "쥐는 하루하루를 이겨낸다. 오늘 하루만이라도 최선을 다해라.",
+      "빠른 것보다, 변화를 잘 읽는 것이 중요하다. 흐름을 느껴라.",
+      "작지만 강하다. 너 또한 충분하다. 스스로를 믿어라.",
+      "달빛 속 작은 쥐가 세상을 바꾼다. 너의 존재도 그렇다."
+    ];
+
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    document.getElementById('message').innerText = messages[randomIndex];
+  </script>
+</body>
+</html>
