@@ -241,104 +241,35 @@
     <img class="mouse" src="images/img_rat.png" alt="쥐 캐릭터" />
   </div>
 
-  <script>
-    const messages = [
-      "쌀독 속 쥐는 길이<br/>보이지 않아도<br/>탈출구를 만든다.<br/>오늘도 지혜롭게 한 걸음.",
-      "가장 작은 구멍이","가장 큰 탈출구가 된다.","세밀하게 보라.",
-      "빠른 발보다","빠른 머리가","위기를 이긴다.","침착하게 움직여라.",
-      "지혜는 언제나","불리한 곳에서 빛난다.","오늘의 시련을 웃어넘겨라.",
-      "기민한 쥐는","배고픔보다 두려움을","먼저 이긴다.","과감히 움직여라.",
-      "작지만 영리한 쥐처럼,","오늘은 작은 이득을","소중히 챙겨라.",
-      "수백 마리 고양이도","한 쥐의 지략을","이기지 못한다.","두려워 말고 길을 만들어라.",
-      "어둠 속에서도","길을 찾는 이가","진짜 강자다.",
-      "속도가 아닌 방향을 먼저 잡아라. 쥐는 방향을 잃지 않는다.",
-      "상황을 읽는 눈은, 힘보다 귀하다. 주변을 잘 살펴라.",
-      "준비된 쥐는 어떤 시련도 두렵지 않다. 오늘, 작은 준비를 시작해라.",
-      "복잡한 길에서도 쥐는 냄새를 쫓아 목적지를 찾는다. 너의 직감을 믿어라.",
-      "빠르게 숨는 쥐보다 오래 살아남는 쥐가 현명하다. 서두르지 마라.",
-      "가끔은 구석에 숨는 것도 전략이다. 잠시 쉬어가도 괜찮다.",
-      "달빛 아래 쥐는 흔적을 남기지 않는다. 조용히, 그러나 뚜렷이 움직여라.",
-      "진짜 위기는 눈에 보이지 않는다. 감각을 세워라.",
-      "쥐는 군더더기 없이 행동한다. 오늘은 '버릴 것'을 찾아봐라.",
-      "큰 싸움은 피하고, 중요한 것을 지켜라. 쥐의 지혜를 기억해라.",
-      "지혜로운 쥐는 두 번째 기회를 노린다. 조급해하지 마라.",
-      "어둠을 두려워하지 마라. 쥐는 어둠 속에서 빛난다.",
-      "오늘 한 번은, 조용히 웃고 지나가라. 쥐는 시끄럽지 않다.",
-      "작은 기회를 소홀히 하지 마라. 쥐는 작은 빵조각도 축복처럼 여긴다.",
-      "무리 속에 섞이는 것도 때로는 최고의 전략이다. 혼자 싸우지 마라.",
-      "눈앞의 먹이보다 생존을 먼저 생각하라. 현명한 선택을 해라.",
-      "매번 승리할 필요는 없다. 살아남는 자가 이긴다.",
-      "한 걸음 늦어도 괜찮다. 중요한 건 방향이다.",
-      "쥐는 하루하루를 이겨낸다. 오늘 하루만이라도 최선을 다해라.",
-      "빠른 것보다, 변화를 잘 읽는 것이 중요하다. 흐름을 느껴라.",
-      "작지만 강하다. 너 또한 충분하다. 스스로를 믿어라.",
-      "달빛 속 작은 쥐가 세상을 바꾼다. 너의 존재도 그렇다."
-    ];
-
-        const randomIndex = Math.floor(Math.random() * messages.length);
-        document.getElementById('message').innerText = messages[randomIndex];
-    
-        const container = document.getElementById('message');
-
-        
-
-        function showLinesOneByOne(lines, delay = 2000) {
-            const container = document.getElementById('message');
-          
-            lines.forEach((line, i) => {
-              setTimeout(() => {
-                container.innerHTML = ''; // 이전 문장 제거
-                const div = document.createElement('div');
-                div.textContent = line;
-                div.style.opacity = 0;
-                div.style.transition = 'opacity 1s ease-in';
-                div.style.display = 'block';
-                container.appendChild(div);
-                requestAnimationFrame(() => {
-                  div.style.opacity = 1;
-                });
-              }, i * delay);
-            });
-        }
-
-      function showLines(lines, delay = 1600) {
-      const container = document.getElementById('message');
-    
-      let i = 0;
-    
-      function showNextLine() {
-        if (i >= lines.length) return;
-    
-        container.innerHTML = ''; // 이전 줄 지우기 (원하면 제거하세요)
-    
-        const div = document.createElement('div');
-          div.textContent = lines[i];
-          div.style.opacity = 0;
-          div.style.transition = 'opacity 1s ease-in';
-          div.style.display = 'block';
-      
-          container.appendChild(div);
-      
-          requestAnimationFrame(() => {
-            div.style.opacity = 1;
-          });
-      
-          i++;
-          setTimeout(showNextLine, delay);
-        }
-      
-        showNextLine();
-      }
-      
-      
-      // 랜덤 메시지 선택 & 줄 나누기
-      const randomText = messages[Math.floor(Math.random() * messages.length)];
-      const splitLines = randomText.split(/(?<=\.)\s?/); // 마침표 기준 줄바꿈
-      showLinesOneByOne(splitLines);
-      const randomLines = messages[Math.floor(Math.random() * messages.length)];
-      showLines(randomLines); // 각 줄마다 fade-in 또는 delay로 제어 가능
-
-    
-  </script>
+   <script>
+     const messages = [
+       "쌀독 속 쥐는 길이/n보이지 않아도/n탈출구를 만든다. 오늘도 지혜롭게 한 걸음.",
+       "가장 작은 구멍이/n가장 큰 탈출구가 된다. 세밀하게 보라.",
+       "빠른 발보다/n빠른 머리가/n위기를 이긴다. 침착하게 움직여라.",
+       "지혜는 언제나/n불리한 곳에서 빛난다. 오늘의 시련을 웃어넘겨라.",
+       "기민한 쥐는/n배고픔보다 두려움을/n먼저 이긴다. 과감히 움직여라.",
+       "작지만 영리한 쥐처럼,/n오늘은 작은 이득을/n소중히 챙겨라.",
+       "수백 마리 고양이도/n한 쥐의 지략을/n이기지 못한다. 두려워 말고 길을 만들어라.",
+       "어둠 속에서도 길을 찾는 이가 진짜 강자다.",
+       "쌀독 속 쥐는 길이","보이지 않아도","탈출구를 만든다.","오늘도 지혜롭게 한 걸음.",
+       "가장 작은 구멍이","가장 큰 탈출구가 된다.","세밀하게 보라.",
+       "빠른 발보다","빠른 머리가","위기를 이긴다.","침착하게 움직여라.",
+       "지혜는 언제나","불리한 곳에서 빛난다.","오늘의 시련을 웃어넘겨라.",
+       "기민한 쥐는","배고픔보다 두려움을","먼저 이긴다.","과감히 움직여라.",
+       "작지만 영리한 쥐처럼,","오늘은 작은 이득을","소중히 챙겨라.",
+       "수백 마리 고양이도","한 쥐의 지략을","이기지 못한다.","두려워 말고 길을 만들어라.",
+       "어둠 속에서도","길을 찾는 이가","진짜 강자다.",
+       "속도가 아닌 방향을 먼저 잡아라. 쥐는 방향을 잃지 않는다.",
+       "상황을 읽는 눈은, 힘보다 귀하다. 주변을 잘 살펴라.",
+       "준비된 쥐는 어떤 시련도 두렵지 않다. 오늘, 작은 준비를 시작해라.",
+ @@ -323,6 +323,9 @@
+       const randomText = messages[Math.floor(Math.random() * messages.length)];
+       const splitLines = randomText.split(/(?<=\.)\s?/); // 마침표 기준 줄바꿈
+       showLinesOneByOne(splitLines);
+       const randomLines = messages[Math.floor(Math.random() * messages.length)];
+       showLines(randomLines); // 각 줄마다 fade-in 또는 delay로 제어 가능
+ 
+ 
+   </script>
 </body>
 </html>
