@@ -262,7 +262,8 @@
        "속도가 아닌 방향을 먼저 잡아라. 쥐는 방향을 잃지 않는다.",
        "상황을 읽는 눈은, 힘보다 귀하다. 주변을 잘 살펴라.",
        "준비된 쥐는 어떤 시련도 두렵지 않다. 오늘, 작은 준비를 시작해라.",
- @@ -323,6 +323,9 @@
+      ]
+     
        const randomText = messages[Math.floor(Math.random() * messages.length)];
        const splitLines = randomText.split(/(?<=\.)\s?/); // 마침표 기준 줄바꿈
        showLinesOneByOne(splitLines);
