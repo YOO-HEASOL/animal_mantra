@@ -10,16 +10,24 @@
 
 
   <style>
-
-  /* 눈누에서 BM Yeonsung 불러오기 */
     @font-face {
-      font-family: 'BM Yeonsung';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.0/BMYeonsung.woff2') format('woff2'),
-           url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.0/BMYeonsung.woff') format('woff');
-      font-weight: normal;
+    font-family: 'BM Yeonsung';
+    src: url('fonts/BMYeonsung.woff2') format('woff2'),
+         url('fonts/BMYeonsung.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+   }
+
+    @font-face {
+      font-family: 'Nanum Myeongjo';
+      src: url('fonts/NanumMyeongjo.woff2') format('woff2'),
+           url('fonts/NanumMyeongjo.woff') format('woff');
+      font-weight: 700;
       font-style: normal;
+      font-display: swap;
     }
-    
+
     body {
       font-family: 'Nanum Myeongjo', serif;
     }
@@ -27,6 +35,8 @@
     .bm-title, .chat-text {
       font-family: 'BM Yeonsung', sans-serif;
     }
+
+
   
     .svg-message-text, .message-text {
       font-family: 'Nanum Myeongjo', serif;
