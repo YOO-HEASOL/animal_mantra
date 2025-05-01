@@ -299,25 +299,35 @@
             });
         }
 
+      function showLines(lines, delay = 1600) {
+      const container = document.getElementById('message');
     
-      function showLines(lines, delay = 2000) {
-        container.innerHTML = ''; // 초기화
+      let i = 0;
     
-        lines.forEach((line, i) => {
-          const div = document.createElement('div');
-          div.textContent = line;
+      function showNextLine() {
+        if (i >= lines.length) return;
+    
+        container.innerHTML = ''; // 이전 줄 지우기 (원하면 제거하세요)
+    
+        const div = document.createElement('div');
+          div.textContent = lines[i];
           div.style.opacity = 0;
           div.style.transition = 'opacity 1s ease-in';
           div.style.display = 'block';
-    
-          setTimeout(() => {
-            container.appendChild(div);
-            requestAnimationFrame(() => {
-              div.style.opacity = 1;
-            });
-          }, i * delay);
-        });
+      
+          container.appendChild(div);
+      
+          requestAnimationFrame(() => {
+            div.style.opacity = 1;
+          });
+      
+          i++;
+          setTimeout(showNextLine, delay);
+        }
+      
+        showNextLine();
       }
+      
       
       // 랜덤 메시지 선택 & 줄 나누기
       const randomText = messages[Math.floor(Math.random() * messages.length)];
