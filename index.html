@@ -279,6 +279,26 @@
         document.getElementById('message').innerText = messages[randomIndex];
     
         const container = document.getElementById('message');
+
+        function showLinesOneByOne(lines, delay = 1200) {
+            const container = document.getElementById('message');
+          
+            lines.forEach((line, i) => {
+              setTimeout(() => {
+                container.innerHTML = ''; // 이전 문장 제거
+                const div = document.createElement('div');
+                div.textContent = line;
+                div.style.opacity = 0;
+                div.style.transition = 'opacity 1s ease-in';
+                div.style.display = 'block';
+                container.appendChild(div);
+                requestAnimationFrame(() => {
+                  div.style.opacity = 1;
+                });
+              }, i * delay);
+            });
+        }
+
     
       function showLines(lines, delay = 1200) {
         container.innerHTML = ''; // 초기화
@@ -298,11 +318,12 @@
           }, i * delay);
         });
       }
-    
+      
       // 랜덤 메시지 선택 & 줄 나누기
       const randomText = messages[Math.floor(Math.random() * messages.length)];
       const splitLines = randomText.split(/(?<=\.)\s?/); // 마침표 기준 줄바꿈
-      showLines(splitLines);
+      showLinesOneByOne(splitLines);
+    
   </script>
 </body>
 </html>
