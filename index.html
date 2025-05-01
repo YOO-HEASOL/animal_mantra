@@ -4,15 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>쥐띠 메시지</title>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet" />
+
+  <!-- Google Fonts: 나눔명조 -->
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap" rel="stylesheet" />
+
 
   <style>
-   @font-face {
-    font-family: 'BM Yeonsung';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.0/BMYeonsung.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+
+  /* 눈누에서 BM Yeonsung 불러오기 */
+    @font-face {
+      font-family: 'BM Yeonsung';
+      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.0/BMYeonsung.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  
+    body {
+      font-family: 'Nanum Myeongjo', serif;
+    }
+  
+    .bm-title, .chat-text {
+      font-family: 'BM Yeonsung', sans-serif;
+    }
+  
+    .svg-message-text, .message-text {
+      font-family: 'Nanum Myeongjo', serif;
+    }
 
     .svg-wrapper {
     
@@ -90,13 +107,7 @@
     }
 
     @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap');
-    @font-face {
-      font-family: 'BM Yeonsung';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.0/BMYeonsung.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-
+    
     * {
       box-sizing: border-box;
     }
