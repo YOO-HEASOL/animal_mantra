@@ -254,7 +254,8 @@
         ["상황을 읽는 눈은<br>힘보다 귀하다.", "주변을 잘 살펴라."],
         ["준비된 쥐는 어떤<br>시련도 두렵지 않다.", "오늘, 작은 준비를 시작해라."]
       ];
-    
+      
+      element.innerHTML = message;
       const container = document.getElementById('message');
     
       function showLinesOneByOne(lines, delay = 1800) {
