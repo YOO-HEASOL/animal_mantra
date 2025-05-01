@@ -184,14 +184,7 @@
     }
   </style>
 
-  <script>
-    // 주소 복사 방지
-    history.replaceState({}, '', '/'); // 주소창에서 URL 감추기 (일부 브라우저)
-    document.addEventListener('contextmenu', e => e.preventDefault()); // 우클릭 방지
-    document.addEventListener('keydown', e => {
-      if ((e.ctrlKey && e.key === 'c') || (e.metaKey && e.key === 'c')) e.preventDefault(); // 복사 방지
-    });
-  </script>
+
 </head>
 <body>
   <div class="title">당신의 하루를 위한<br>작은 메시지</div>
