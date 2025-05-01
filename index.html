@@ -254,18 +254,17 @@
         ["상황을 읽는 눈은<br>힘보다 귀하다.", "주변을 잘 살펴라."],
         ["준비된 쥐는 어떤<br>시련도 두렵지 않다.", "오늘, 작은 준비를 시작해라."]
       ];
-      
-      element.innerHTML = message;
+
       const container = document.getElementById('message');
-    
+  
       function showLinesOneByOne(lines, delay = 1800) {
-        container.innerHTML = ''; // 초기화
-    
+        container.innerHTML = '';
+      
         lines.forEach((line, i) => {
           setTimeout(() => {
-            container.innerHTML = ''; // 이전 줄 지우기 (감성적으로 한 줄씩만 보여주려면 유지)
+            container.innerHTML = ''; // 한 줄씩만 보이게
             const div = document.createElement('div');
-            div.textContent = line;
+            div.innerHTML = line;  // ✅ <br> 줄바꿈 처리됨
             div.style.opacity = 0;
             div.style.transition = 'opacity 1s ease-in';
             div.style.display = 'block';
@@ -276,7 +275,7 @@
           }, i * delay);
         });
       }
-    
+
       // 실행
       const randomLines = messages[Math.floor(Math.random() * messages.length)];
       showLinesOneByOne(randomLines, 2400); // 감성적 템포로 약 2.4초 간격
