@@ -76,29 +76,33 @@
         history.pushState(null, '', location.href); // 강제 유지
       }
 
-      //캐릭터 따라다니게 하는 이벤트
-      document.addEventListener("DOMContentLoaded", () => {
-        const animal = document.querySelector('.animal');
-      
-        let isTouching = false;
-      
-        animal.addEventListener('touchstart', (e) => {
-          isTouching = true;
-          animal.style.position = 'fixed'; // 고정 위치로 전환
-          animal.style.pointerEvents = 'none'; // 터치 중간에 터치 이벤트 충돌 방지
-        });
-      
-        document.addEventListener('touchmove', (e) => {
-          if (!isTouching) return;
-          const touch = e.touches[0];
-          animal.style.left = `${touch.clientX - animal.offsetWidth / 2}px`;
-          animal.style.top = `${touch.clientY - animal.offsetHeight / 2}px`;
-        });
-      
-        document.addEventListener('touchend', () => {
-          isTouching = false;
-          animal.style.pointerEvents = 'auto'; // 원상복귀
-        });
-      });
+      // 꽃잎 이펙트
+      const animal = document.querySelector('.animal');
 
+      animal.addEventListener('touchstart', (e) => {
+        createPetals(25, e.touches[0].clientX, e.touches[0].clientY);
+      });
+      
+      function createPetals(count, originX, originY) {
+        for (let i = 0; i < count; i++) {
+          const petal = document.createElement('div');
+          petal.className = 'petal';
+      
+          // 시작 위치
+          petal.style.left = `${originX}px`;
+          petal.style.top = `${originY}px`;
+      
+          // 퍼지는 방향 (랜덤 offset)
+          const offsetX = (Math.random() - 0.5) * 300 + 'px';
+          const offsetY = (Math.random() - 0.5) * 300 + 'px';
+      
+          petal.style.setProperty('--x', offsetX);
+          petal.style.setProperty('--y', offsetY);
+      
+          document.body.appendChild(petal);
+      
+          // DOM에서 제거
+          setTimeout(() => petal.remove(), 3000);
+        }
+      }
 
