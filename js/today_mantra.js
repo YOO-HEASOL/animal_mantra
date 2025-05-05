@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   // 🌄 배경 랜덤
   const backgrounds = [
@@ -14,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.style.backgroundImage = `url(${chosen})`;
 
   // 💬 진언 메시지
-      const messages = [
+  const messages = [
         [["옴 바아라<br>바다라 훔 바탁"], "풍요롭고 안락한 생활을<br>성취하는 진언이에요."],
         [["옴 기리나라 모나라<br>훔 바탁"], "온갖 불안에서 마음의 평온을<br>얻는 진언이에요."],
         [["옴 기리기리 바아라<br>훔 바탁"], "뱃속의 온갖 질병을<br>낫게 하는 진언이에요."],
@@ -64,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     history.pushState(null, '', location.href);
   }
 
-  // 🌸 꽃잎 효과
+  // 🌸 꽃잎 이펙트
   const petalImages = [
     'images/img_petal1.png',
     'images/img_petal2.png',
@@ -72,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     'images/img_petal4.png'
   ];
 
-  function createPetals(count, originX, originY) {
+  function createFullScreenPetals(count) {
     for (let i = 0; i < count; i++) {
       const petal = document.createElement('div');
       petal.className = 'petal';
@@ -80,28 +79,30 @@ document.addEventListener("DOMContentLoaded", () => {
       const img = petalImages[Math.floor(Math.random() * petalImages.length)];
       petal.style.backgroundImage = `url('${img}')`;
 
-      petal.style.left = `${originX}px`;
-      petal.style.top = `${originY}px`;
+      const startX = Math.random() * window.innerWidth;
+      petal.style.left = `${startX}px`;
+      petal.style.top = `-30px`;
 
-      const offsetX = (Math.random() - 0.5) * 300 + 'px';
-      const offsetY = (Math.random() - 0.5) * 300 + 'px';
-      petal.style.setProperty('--x', offsetX);
-      petal.style.setProperty('--y', offsetY);
+      const size = 20 + Math.random() * 20;
+      petal.style.width = `${size}px`;
+      petal.style.height = `${size}px`;
+
+      const duration = 2 + Math.random() * 2;
+      petal.style.animationDuration = `${duration}s`;
 
       document.body.appendChild(petal);
-      setTimeout(() => petal.remove(), 3000);
+      setTimeout(() => petal.remove(), duration * 1000);
     }
   }
 
-  // ✅ 이 부분이 DOMContentLoaded 안으로 들어와야 함!
   const animal = document.querySelector('.animal');
   if (animal) {
-    animal.addEventListener('touchstart', (e) => {
-      createPetals(30, e.touches[0].clientX, e.touches[0].clientY);
+    animal.addEventListener('click', () => {
+      createFullScreenPetals(40);
     });
-
-    animal.addEventListener('click', (e) => {
-      createPetals(30, e.clientX, e.clientY);
+    animal.addEventListener('touchstart', () => {
+      createFullScreenPetals(40);
     });
   }
 });
+
