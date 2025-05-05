@@ -17,11 +17,10 @@ body {
   padding: 0;
   background: url('images/bg_01.png') no-repeat center center;
   background-size: cover;
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100dvh;
 }
 
 .bm-title,
@@ -37,11 +36,8 @@ body {
 .svg-wrapper {
   position: relative;
   transform: scale(1.3);
-  margin: 0 auto;
-  margin-top: 30px;
-  
+  margin: 30px auto 0;
 }
-
 
 .svg-background {
   width: 100%;
@@ -49,14 +45,9 @@ body {
   animation: rotate-slow 30s linear infinite;
 }
 
-/* 회전 키프레임 */
 @keyframes rotate-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg); /* 오른쪽 방향 */
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .svg-message-text {
@@ -70,29 +61,22 @@ body {
   align-items: center;
   color: #62472F;
   text-align: center;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
-  line-height: 150%;
-  padding: 36px;
+  line-height: 160%;
+  padding: 40px;
   box-sizing: border-box;
 }
 
 .svg-message-text div {
-  margin-bottom: 8px;
-  font-size: 20px;
+  margin-bottom: 12px;
+  font-size: 24px;
   animation: fadein 1s ease-in forwards;
 }
 
 @keyframes fadein {
-  0% {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(5px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .animal-container {
@@ -121,39 +105,37 @@ body {
   left: 7%;
   transform: translateY(-30%);
   width: 130px;
-  font-size: 11px;
+  font-size: 16px;
   color: #836B56;
   font-family: 'BM Yeonsung';
   text-align: center;
-  line-height: 130%;
+  line-height: 150%;
 }
 
 .animal {
   transform: scale(1.5);
-  width: 80px;
+  width: 90px;
   margin-left: 10px;
-  /*캐릭터 따라다니게하는 css*/
-  position: relative; /* JS에서 fixed로 전환됨 */
+  position: relative;
   z-index: 1000;
   transition: transform 0.1s ease;
-
 }
 
 .bm-title {
   margin-top: 40px;
   text-align: center;
   color: #FFF;
-  font-size: 33.409px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 400;
-  line-height: 136%;
+  line-height: 150%;
   text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.10);
 }
 
 .message-box {
   position: relative;
-  width: 254px;
-  height: 196px;
+  width: 280px;
+  height: 210px;
   margin-top: 20px;
 }
 
@@ -166,25 +148,23 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 254px;
-  height: 196px;
+  width: 280px;
+  height: 210px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: #62472F;
   text-align: center;
-  font-family: Nanum Myeongjo;
-  font-size: 28px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 700;
-  line-height: 150%;
+  line-height: 160%;
 }
 
 * {
   box-sizing: border-box;
 }
 
-/* 모바일 세로 비율 대응 */
 @media screen and (max-height: 700px) {
   .message-box {
     transform: scale(0.9);
@@ -192,21 +172,21 @@ body {
   }
 
   .bm-title {
-    font-size: 24px;
+    font-size: 28px;
     margin-top: 20px;
   }
 
   .svg-message-text,
   .message-text {
-    font-size: 16px;
-    line-height: 140%;
+    font-size: 20px;
+    line-height: 150%;
     padding: 20px;
   }
 
   .chat-text {
-    font-size: 10px;
+    font-size: 14px;
     width: 110px;
-    line-height: 120%;
+    line-height: 140%;
   }
 
   .chat-bubble img {
@@ -214,7 +194,7 @@ body {
   }
 
   .animal {
-    width: 60px;
+    width: 70px;
     transform: scale(1.3);
   }
 
@@ -223,7 +203,6 @@ body {
   }
 }
 
-/* 아주 작은 화면 대응 */
 @media screen and (max-height: 500px) {
   .message-box {
     transform: scale(0.75);
