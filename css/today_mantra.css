@@ -171,16 +171,16 @@ body {
 
 .petal {
   position: fixed;
-  width: 24px;
-  height: 24px;
   background-size: cover;
-  opacity: 0.8;
   pointer-events: none;
+  opacity: 0.8;
   z-index: 9999;
-  animation: fall 6s linear forwards, sway 2s ease-in-out infinite alternate;
+  animation-name: fall, sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-fill-mode: forwards;
 }
 
-/* 아래로 떨어지는 애니메이션 */
+/* 하강 애니메이션 */
 @keyframes fall {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -192,12 +192,12 @@ body {
   }
 }
 
-/* 좌우 흔들림 애니메이션 (진자처럼) */
+/* 좌우 흔들림 */
 @keyframes sway {
   0% {
     transform: translateX(0px);
   }
   100% {
-    transform: translateX(30px);
+    transform: translateX(var(--sway-x));
   }
 }
