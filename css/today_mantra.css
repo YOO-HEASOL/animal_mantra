@@ -128,9 +128,9 @@ body {
 }
 
 .animal {
-  transform: scale(1.3);
+  transform: scale(1.5);
   width: 80px;
-  margin-left: 0px;
+  margin-left: 10px;
   /*캐릭터 따라다니게하는 css*/
   position: relative; /* JS에서 fixed로 전환됨 */
   z-index: 1000;
