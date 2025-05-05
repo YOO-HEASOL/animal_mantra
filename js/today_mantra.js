@@ -83,25 +83,25 @@ document.addEventListener("DOMContentLoaded", () => {
       petal.style.left = `${startX}px`;
       petal.style.top = `-10px`;
 
-      const size = 20 + Math.random() * 20;
+      const size = 26 + Math.random() * 20;
       petal.style.width = `${size}px`;
       petal.style.height = `${size}px`;
 
-      const duration = 5 + Math.random() * 2;
-      petal.style.animationDuration = `${duration}s, 2s`; // fall, sway 각각 시간 지정
+      const duration = 10 + Math.random() * 4;
+      petal.style.animationDuration = `${duration}s, 8s`; // fall, sway 각각 시간 지정
 
       document.body.appendChild(petal);
-      setTimeout(() => petal.remove(), duration * 1000);
+      setTimeout(() => petal.remove(), duration * 3000);
     }
   }
 
   const animal = document.querySelector('.animal');
   if (animal) {
     animal.addEventListener('click', () => {
-      createFullScreenPetals(20);
+      createFullScreenPetals(10);
     });
     animal.addEventListener('touchstart', () => {
-      createFullScreenPetals(20);
+      createFullScreenPetals(10);
     });
   }
 });
