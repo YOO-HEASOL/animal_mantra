@@ -76,4 +76,29 @@
         history.pushState(null, '', location.href); // 강제 유지
       }
 
+      //캐릭터 따라다니게 하는 이벤트
+      document.addEventListener("DOMContentLoaded", () => {
+        const animal = document.querySelector('.animal');
+      
+        let isTouching = false;
+      
+        animal.addEventListener('touchstart', (e) => {
+          isTouching = true;
+          animal.style.position = 'fixed'; // 고정 위치로 전환
+          animal.style.pointerEvents = 'none'; // 터치 중간에 터치 이벤트 충돌 방지
+        });
+      
+        document.addEventListener('touchmove', (e) => {
+          if (!isTouching) return;
+          const touch = e.touches[0];
+          animal.style.left = `${touch.clientX - animal.offsetWidth / 2}px`;
+          animal.style.top = `${touch.clientY - animal.offsetHeight / 2}px`;
+        });
+      
+        document.addEventListener('touchend', () => {
+          isTouching = false;
+          animal.style.pointerEvents = 'auto'; // 원상복귀
+        });
+      });
+
 
