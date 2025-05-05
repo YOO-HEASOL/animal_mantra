@@ -1,3 +1,18 @@
+      document.addEventListener("DOMContentLoaded", () => {
+        const backgrounds = [
+          "images/bg_rat.png",
+          "images/bg_ox.png",
+          "images/bg_tiger.png",
+          "images/bg_rabbit.png",
+          // 추가 이미지 경로 계속
+        ];
+      
+        // 랜덤 배경 선택
+        const chosen = backgrounds[Math.floor(Math.random() * backgrounds.length)];
+      
+        // 배경 이미지 변경
+        document.body.style.backgroundImage = `url(${chosen})`;
+      });
 
       const messages = [
         [["옴 바아라<br>바다라 훔 바탁"], "풍요롭고 안락한 생활을<br>성취하는 진언이에요."],
@@ -50,3 +65,4 @@
       // 실행
       const randomLines = messages[Math.floor(Math.random() * messages.length)];
       showLinesOneByOne(randomLines, 2400); // 감성적 템포로 약 2.4초 간격
+
