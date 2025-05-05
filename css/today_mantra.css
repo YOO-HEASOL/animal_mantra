@@ -169,4 +169,25 @@ body {
   box-sizing: border-box;
 }
 
+.petal {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: 9999;
+  animation: fall 3s ease-out forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+    opacity: 0;
+  }
+}
 
