@@ -77,32 +77,40 @@
       }
 
       // 꽃잎 이펙트
-      const animal = document.querySelector('.animal');
-
-      animal.addEventListener('touchstart', (e) => {
-        createPetals(25, e.touches[0].clientX, e.touches[0].clientY);
-      });
+     const petalImages = [
+        'images/petal1.png',
+        'images/petal2.png',
+        'images/petal3.png',
+        'images/petal4.png'
+      ];
       
       function createPetals(count, originX, originY) {
         for (let i = 0; i < count; i++) {
           const petal = document.createElement('div');
           petal.className = 'petal';
       
-          // 시작 위치
+          // 랜덤 이미지 적용
+          const img = petalImages[Math.floor(Math.random() * petalImages.length)];
+          petal.style.backgroundImage = `url('${img}')`;
+      
+          // 위치 설정
           petal.style.left = `${originX}px`;
           petal.style.top = `${originY}px`;
       
-          // 퍼지는 방향 (랜덤 offset)
+          // 퍼지는 방향 설정
           const offsetX = (Math.random() - 0.5) * 300 + 'px';
           const offsetY = (Math.random() - 0.5) * 300 + 'px';
-      
           petal.style.setProperty('--x', offsetX);
           petal.style.setProperty('--y', offsetY);
       
           document.body.appendChild(petal);
       
-          // DOM에서 제거
+          // 자동 제거
           setTimeout(() => petal.remove(), 3000);
         }
       }
 
+      // 모바일에서 터치시 실행
+      animal.addEventListener('touchstart', (e) => {
+  createPetals(30, e.touches[0].clientX, e.touches[0].clientY);
+});
