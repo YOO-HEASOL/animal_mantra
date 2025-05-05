@@ -180,7 +180,7 @@ body {
   animation-fill-mode: forwards;
 }
 
-/* 하강 애니메이션 */
+/* 아래로 떨어지는 애니메이션 */
 @keyframes fall {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -192,7 +192,7 @@ body {
   }
 }
 
-/* 좌우 흔들림 */
+/* 좌우 흔들리는 애니메이션 */
 @keyframes sway {
   0% {
     transform: translateX(0px);
