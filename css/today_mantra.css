@@ -177,9 +177,10 @@ body {
   opacity: 0.8;
   pointer-events: none;
   z-index: 9999;
-  animation: fall 3s linear forwards;
+  animation: fall 6s linear forwards, sway 2s ease-in-out infinite alternate;
 }
 
+/* 아래로 떨어지는 애니메이션 */
 @keyframes fall {
   0% {
     transform: translateY(0) rotate(0deg);
@@ -188,5 +189,15 @@ body {
   100% {
     transform: translateY(100vh) rotate(360deg);
     opacity: 0;
+  }
+}
+
+/* 좌우 흔들림 애니메이션 (진자처럼) */
+@keyframes sway {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(30px);
   }
 }
