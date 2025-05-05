@@ -63,46 +63,4 @@ document.addEventListener("DOMContentLoaded", () => {
     history.pushState(null, '', location.href);
   }
 
-  // 🌸 꽃잎 이펙트
-  const petalImages = [
-    'images/img_petal1.png',
-    'images/img_petal2.png',
-    'images/img_petal3.png',
-    'images/img_petal4.png'
-  ];
-
-  function createFullScreenPetals(count) {
-  for (let i = 0; i < count; i++) {
-    const petal = document.createElement('div');
-    petal.className = 'petal';
-
-    // 🌸 랜덤 이미지
-    const img = petalImages[Math.floor(Math.random() * petalImages.length)];
-    petal.style.backgroundImage = `url('${img}')`;
-
-    // 🌸 랜덤 위치, 크기
-    const startX = Math.random() * window.innerWidth;
-    const size = 20 + Math.random() * 20;
-    petal.style.left = `${startX}px`;
-    petal.style.top = `-30px`;
-    petal.style.width = `${size}px`;
-    petal.style.height = `${size}px`;
-
-    // 🌸 랜덤 애니메이션 지속시간
-    const fallDuration = 5 + Math.random() * 3; // 5~8초
-    const swayDuration = 1.5 + Math.random();   // 1.5~2.5초
-    const delay = Math.random() * 1.5;          // 시작 지연
-
-    petal.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
-    petal.style.animationDelay = `${delay}s, ${delay}s`;
-
-    // 🌸 랜덤 흔들림 거리
-    const swayX = (Math.random() < 0.5 ? -1 : 1) * (10 + Math.random() * 30); // -40 ~ +40
-    petal.style.setProperty('--sway-x', `${swayX}px`);
-
-    document.body.appendChild(petal);
-
-    // DOM에서 제거
-    setTimeout(() => petal.remove(), (fallDuration + delay) * 1000);
-  }
-}
+  
