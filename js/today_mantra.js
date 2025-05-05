@@ -2,8 +2,10 @@
         const backgrounds = [
           "images/bg_01.png",
           "images/bg_02.png",
-          "images/bg_tiger.png",
-          "images/bg_rabbit.png",
+          "images/bg_03.png",
+          "images/bg_04.png",
+            "images/bg_05.png",
+            "images/bg_06.png",
           // 추가 이미지 경로 계속
         ];
       
