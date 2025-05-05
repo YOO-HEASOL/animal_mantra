@@ -171,23 +171,22 @@ body {
 
 .petal {
   position: fixed;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background-size: cover;
-  pointer-events: none;
   opacity: 0.8;
+  pointer-events: none;
   z-index: 9999;
-  animation: fall 3s ease-out forwards;
+  animation: fall 3s linear forwards;
 }
 
 @keyframes fall {
   0% {
-    transform: translate(0, 0) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
   100% {
-    transform: translate(var(--x), var(--y)) rotate(360deg);
+    transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
 }
-
