@@ -38,6 +38,17 @@ body {
   transform: scale(1.2);
   margin: 0 auto;
   margin-top: 30px;
+  animation: rotate-slow 20s linear infinite;
+}
+
+/* 회전 키프레임 */
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg); /* 오른쪽 방향 */
+  }
 }
 
 .svg-background {
