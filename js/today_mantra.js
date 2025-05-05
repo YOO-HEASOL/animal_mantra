@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const startX = Math.random() * window.innerWidth;
       petal.style.left = `${startX}px`;
-      petal.style.top = `-30px`;
+      petal.style.top = `-10px`;
 
       const size = 20 + Math.random() * 20;
       petal.style.width = `${size}px`;
@@ -98,10 +98,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const animal = document.querySelector('.animal');
   if (animal) {
     animal.addEventListener('click', () => {
-      createFullScreenPetals(40);
+      createFullScreenPetals(20);
     });
     animal.addEventListener('touchstart', () => {
-      createFullScreenPetals(40);
+      createFullScreenPetals(20);
     });
   }
 });
