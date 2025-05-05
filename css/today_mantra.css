@@ -15,7 +15,7 @@ body {
   font-family: 'Nanum Myeongjo', serif;
   margin: 0;
   padding: 0;
-  background: url('/images/bg_rat.png') no-repeat center center;
+  background: url('images/bg_rat.png') no-repeat center center;
   background-size: cover;
   height: 100vh;
   display: flex;
