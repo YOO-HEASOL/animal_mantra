@@ -78,10 +78,10 @@
 
       // 꽃잎 이펙트
      const petalImages = [
-        'images/petal1.png',
-        'images/petal2.png',
-        'images/petal3.png',
-        'images/petal4.png'
+        'images/img_petal1.png',
+        'images/img_petal2.png',
+        'images/img_petal3.png',
+        'images/img_petal4.png'
       ];
       
       function createPetals(count, originX, originY) {
