@@ -87,8 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
       petal.style.width = `${size}px`;
       petal.style.height = `${size}px`;
 
-      const duration = 2 + Math.random() * 2;
-      petal.style.animationDuration = `${duration}s`;
+      const duration = 5 + Math.random() * 2;
+      petal.style.animationDuration = `${duration}s, 2s`; // fall, sway 각각 시간 지정
 
       document.body.appendChild(petal);
       setTimeout(() => petal.remove(), duration * 1000);
