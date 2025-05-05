@@ -6,6 +6,7 @@
           "images/bg_04.png",
             "images/bg_05.png",
             "images/bg_06.png",
+            "images/bg_07.png",
           // 추가 이미지 경로 계속
         ];
       
