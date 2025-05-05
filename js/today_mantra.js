@@ -72,37 +72,37 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   function createFullScreenPetals(count) {
-    for (let i = 0; i < count; i++) {
-      const petal = document.createElement('div');
-      petal.className = 'petal';
+  for (let i = 0; i < count; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'petal';
 
-      const img = petalImages[Math.floor(Math.random() * petalImages.length)];
-      petal.style.backgroundImage = `url('${img}')`;
+    // 🌸 랜덤 이미지
+    const img = petalImages[Math.floor(Math.random() * petalImages.length)];
+    petal.style.backgroundImage = `url('${img}')`;
 
-      const startX = Math.random() * window.innerWidth;
-      petal.style.left = `${startX}px`;
-      petal.style.top = `-10px`;
+    // 🌸 랜덤 위치, 크기
+    const startX = Math.random() * window.innerWidth;
+    const size = 20 + Math.random() * 20;
+    petal.style.left = `${startX}px`;
+    petal.style.top = `-30px`;
+    petal.style.width = `${size}px`;
+    petal.style.height = `${size}px`;
 
-      const size = 26 + Math.random() * 20;
-      petal.style.width = `${size}px`;
-      petal.style.height = `${size}px`;
+    // 🌸 랜덤 애니메이션 지속시간
+    const fallDuration = 5 + Math.random() * 3; // 5~8초
+    const swayDuration = 1.5 + Math.random();   // 1.5~2.5초
+    const delay = Math.random() * 1.5;          // 시작 지연
 
-      const duration = 10 + Math.random() * 4;
-      petal.style.animationDuration = `${duration}s, 8s`; // fall, sway 각각 시간 지정
+    petal.style.animationDuration = `${fallDuration}s, ${swayDuration}s`;
+    petal.style.animationDelay = `${delay}s, ${delay}s`;
 
-      document.body.appendChild(petal);
-      setTimeout(() => petal.remove(), duration * 3000);
-    }
+    // 🌸 랜덤 흔들림 거리
+    const swayX = (Math.random() < 0.5 ? -1 : 1) * (10 + Math.random() * 30); // -40 ~ +40
+    petal.style.setProperty('--sway-x', `${swayX}px`);
+
+    document.body.appendChild(petal);
+
+    // DOM에서 제거
+    setTimeout(() => petal.remove(), (fallDuration + delay) * 1000);
   }
-
-  const animal = document.querySelector('.animal');
-  if (animal) {
-    animal.addEventListener('click', () => {
-      createFullScreenPetals(10);
-    });
-    animal.addEventListener('touchstart', () => {
-      createFullScreenPetals(10);
-    });
-  }
-});
-
+}
