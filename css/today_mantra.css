@@ -35,10 +35,17 @@ body {
 
 .svg-wrapper {
   position: relative;
-  transform: scale(1.2);
+  transform: scale(1.5);
   margin: 0 auto;
   margin-top: 30px;
-  animation: rotate-slow 20s linear infinite;
+  
+}
+
+
+.svg-background {
+  width: 100%;
+  height: 100%;
+  animation: rotate-slow 30s linear infinite;
 }
 
 /* 회전 키프레임 */
@@ -49,11 +56,6 @@ body {
   to {
     transform: rotate(360deg); /* 오른쪽 방향 */
   }
-}
-
-.svg-background {
-  width: 100%;
-  height: 100%;
 }
 
 .svg-message-text {
