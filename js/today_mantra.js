@@ -111,6 +111,7 @@
       }
 
       // 모바일에서 터치시 실행
+      const animal = document.querySelector('.animal');
       animal.addEventListener('touchstart', (e) => {
   createPetals(30, e.touches[0].clientX, e.touches[0].clientY);
 });
