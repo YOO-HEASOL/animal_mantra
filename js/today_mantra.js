@@ -1,7 +1,7 @@
       document.addEventListener("DOMContentLoaded", () => {
         const backgrounds = [
-          "images/bg_rat.png",
-          "images/bg_ox.png",
+          "images/bg_01.png",
+          "images/bg_02.png",
           "images/bg_tiger.png",
           "images/bg_rabbit.png",
           // 추가 이미지 경로 계속
