@@ -69,3 +69,11 @@
       const randomLines = messages[Math.floor(Math.random() * messages.length)];
       showLinesOneByOne(randomLines, 2400); // 감성적 템포로 약 2.4초 간격
 
+      if (performance.navigation.type === 1) {
+        // 이게 true면 사용자가 새로고침한 것
+        // 여기에 "새로고침 막기" 로직을 넣을 수 있음
+        alert("새로고침은 사용할 수 없습니다.");
+        history.pushState(null, '', location.href); // 강제 유지
+      }
+
+
