@@ -95,7 +95,7 @@ body {
 }
 
 .chat-bubble img {
-  width: 160px;
+  width: 180px;
   margin-bottom: 20%;
 }
 
@@ -104,8 +104,8 @@ body {
   top: 30%;
   left: 7%;
   transform: translateY(-30%);
-  width: 130px;
-  font-size: 16px;
+  width: 150px;
+  font-size: 14px;
   color: #836B56;
   font-family: 'BM Yeonsung';
   text-align: center;
