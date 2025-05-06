@@ -95,7 +95,7 @@ body {
 }
 
 .chat-bubble img {
-  width: 200px;
+  width: 180px;
   margin-bottom: 20%;
 }
 
@@ -104,7 +104,7 @@ body {
   top: 30%;
   left: 7%;
   transform: translateY(-30%);
-  width: 240px;
+  width: 120px;
   font-size: 13px;
   color: #836B56;
   font-family: 'BM Yeonsung';
@@ -113,7 +113,7 @@ body {
 }
 
 .animal {
-  transform: scale(1.5);
+  transform: scale(1.1);
   width: 90px;
   margin-left: 10px;
   position: relative;
@@ -184,14 +184,14 @@ body {
   }
 
   .chat-text {
-    font-size: 14px;
+    font-size: 12px;
     width: 110px;
     line-height: 140%;
   }
 
   .animal {
     width: 70px;
-    transform: scale(1.3);
+    transform: scale(1.1);
   }
 
   .animal-container {
@@ -199,7 +199,7 @@ body {
   }
 
    .chat-bubble {
-    scale: 140%;
+    scale: 120%;
   }
 }
 
