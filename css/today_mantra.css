@@ -231,14 +231,14 @@
  
    .chat-text {
      font-size: 10px;
-     font-size: 14px;
-     width: 110px;
+     font-size: 13px;
+     width: 120px;
      line-height: 120%;
      line-height: 140%;
    }
  
    .chat-bubble img {
-     width: 120px;
+     width: 150px;
    }
  
    .animal {
