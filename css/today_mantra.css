@@ -209,11 +209,11 @@ body {
   }
 
   .chat-bubble {
-    scale: 120%;
+    scale: 140%;
   }
 
   .animal {
-    transform: scale(1.2);
+    transform: scale(1.3);
   }
 }
 
