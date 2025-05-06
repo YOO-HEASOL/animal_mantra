@@ -17,20 +17,22 @@ body {
   padding: 0;
   background: url('images/bg_01.png') no-repeat center center;
   background-size: cover;
+  height: 100vh;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.bm-title,
-.chat-text {
+.bm-title {
+  margin-top: 40px;
+  text-align: center;
+  color: #FFF;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 150%;
+  text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.10);
   font-family: 'BM Yeonsung', sans-serif;
-}
-
-.svg-message-text,
-.message-text {
-  font-family: 'Nanum Myeongjo', serif;
 }
 
 .svg-wrapper {
@@ -51,13 +53,6 @@ body {
 }
 
 .svg-message-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
   color: #62472F;
   text-align: center;
@@ -66,6 +61,7 @@ body {
   line-height: 160%;
   padding: 40px;
   box-sizing: border-box;
+  font-family: 'Nanum Myeongjo', serif;
 }
 
 .svg-message-text div {
@@ -80,32 +76,11 @@ body {
 }
 
 .animal-container {
-  margin-top: auto;
-  margin-bottom: 80px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.chat-bubble {
-  position: relative;
-  scale: 130%;
-  padding-right: 20px;
-}
-
-.chat-bubble img {
-  width: 180px;
-  margin-bottom: 20%;
-}
-
-.chat-text {
   position: absolute;
-  top: 30%;
   left: 7%;
   transform: translateY(-30%);
-  width: 120px;
-  font-size: 13px;
+  width: 130px;
+  font-size: 16px;
   color: #836B56;
   font-family: 'BM Yeonsung';
   text-align: center;
@@ -113,23 +88,12 @@ body {
 }
 
 .animal {
-  transform: scale(1.1);
   width: 90px;
+  transform: scale(1.5);
   margin-left: 10px;
-  position: relative;
+  position: relative; /* JS에서 fixed로 전환될 수 있음 */
   z-index: 1000;
   transition: transform 0.1s ease;
-}
-
-.bm-title {
-  margin-top: 40px;
-  text-align: center;
-  color: #FFF;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 150%;
-  text-shadow: 0px 3px 2px rgba(0, 0, 0, 0.10);
 }
 
 .message-box {
@@ -139,12 +103,7 @@ body {
   margin-top: 20px;
 }
 
-.message-box img {
-  width: 100%;
-  height: 100%;
-}
-
-.message-text {
+.message-box > div {
   position: absolute;
   top: 0;
   left: 0;
@@ -155,8 +114,8 @@ body {
   justify-content: center;
   color: #62472F;
   text-align: center;
+  font-family: 'Nanum Myeongjo', serif;
   font-size: 30px;
-  font-style: normal;
   font-weight: 700;
   line-height: 160%;
 }
@@ -165,9 +124,10 @@ body {
   box-sizing: border-box;
 }
 
-@media screen and (max-height: 500px) {
+/* 모바일 대응 */
+@media screen and (max-height: 700px) {
   .message-box {
-    transform: scale(0.75);
+    transform: scale(0.9);
     margin-top: 10px;
   }
 
@@ -184,29 +144,32 @@ body {
   }
 
   .chat-text {
-    font-size: 12px;
+    font-size: 14px;
     width: 110px;
     line-height: 140%;
   }
 
+  .chat-bubble img {
+    width: 120px;
+  }
+
   .animal {
     width: 70px;
-    transform: scale(1.1);
-  }
-
-  .animal-container {
-    margin-bottom: 40px;
-  }
-
-   .chat-bubble {
-    scale: 120%;
+    transform: scale(1.3);
   }
 }
 
+/* 매우 작은 화면 대응 */
+@media screen and (max-height: 500px) {
+  .message-box {
+    transform: scale(0.75);
+  }
 
+  .chat-bubble {
+    scale: 120%;
+  }
 
- 
-
-  
-
-
+  .animal {
+    transform: scale(1.2);
+  }
+}
