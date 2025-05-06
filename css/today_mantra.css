@@ -90,12 +90,12 @@ body {
 
 .chat-bubble {
   position: relative;
-  scale: 140%;
+  scale: 130%;
   padding-right: 20px;
 }
 
 .chat-bubble img {
-  width: 220px;
+  width: 200px;
   margin-bottom: 20%;
 }
 
@@ -104,8 +104,8 @@ body {
   top: 30%;
   left: 7%;
   transform: translateY(-30%);
-  width: 200px;
-  font-size: 14px;
+  width: 240px;
+  font-size: 13px;
   color: #836B56;
   font-family: 'BM Yeonsung';
   text-align: center;
@@ -165,9 +165,9 @@ body {
   box-sizing: border-box;
 }
 
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 500px) {
   .message-box {
-    transform: scale(0.9);
+    transform: scale(0.75);
     margin-top: 10px;
   }
 
@@ -189,7 +189,6 @@ body {
     line-height: 140%;
   }
 
-
   .animal {
     width: 70px;
     transform: scale(1.3);
@@ -198,19 +197,16 @@ body {
   .animal-container {
     margin-bottom: 40px;
   }
-}
 
-@media screen and (max-height: 500px) {
-  .message-box {
-    transform: scale(0.75);
-  }
-
-  .chat-bubble {
+   .chat-bubble {
     scale: 140%;
   }
-
-  .animal {
-    transform: scale(1.3);
-  }
 }
+
+
+
+ 
+
+  
+
 
