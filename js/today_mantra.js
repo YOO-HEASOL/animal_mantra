@@ -7,7 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
     "images/bg_04.png",
     "images/bg_05.png",
     "images/bg_06.png",
-    "images/bg_07.png"
+    "images/bg_07.png",
+    "images/bg_08.png",
+    "images/bg_09.png",
+    "images/bg_10.png",
+    "images/bg_11.png",
+    "images/bg_12.png"
   ];
   const chosenBackground = backgrounds[Math.floor(Math.random() * backgrounds.length)];
   document.body.style.backgroundImage = `url(${chosenBackground})`;
